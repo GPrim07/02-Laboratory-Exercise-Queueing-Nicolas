@@ -79,9 +79,9 @@
             listViewItem4,
             listViewItem5,
             listViewItem6});
-            this.listCashierQueue.Location = new System.Drawing.Point(485, 96);
+            this.listCashierQueue.Location = new System.Drawing.Point(308, 37);
             this.listCashierQueue.Name = "listCashierQueue";
-            this.listCashierQueue.Size = new System.Drawing.Size(157, 209);
+            this.listCashierQueue.Size = new System.Drawing.Size(206, 391);
             this.listCashierQueue.TabIndex = 2;
             this.listCashierQueue.UseCompatibleStateImageBehavior = false;
             this.listCashierQueue.View = System.Windows.Forms.View.Details;

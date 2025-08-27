@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +13,20 @@ namespace _02_Laboratory_Exercise_Queueing_Nicolas
 {
     public partial class CashierWindowQueueForm : Form
     {
+        public CustomerView CustomerView = new CustomerView();
+
         public CashierWindowQueueForm()
         {
+
             InitializeComponent();
+
+            CustomerView = new CustomerView();
+            CustomerView.Show();
         }
+        
+            
+          
+          
 
         public void DisplayCashierQueue(IEnumerable<string> CashierList)
         {
@@ -34,8 +45,14 @@ namespace _02_Laboratory_Exercise_Queueing_Nicolas
         {
             if (CashierClass.CashierQueue.Count > 0)
             {
-                CashierClass.CashierQueue.Dequeue();
+                var msg = CashierClass.CashierQueue.Dequeue();
+
+
                 DisplayCashierQueue(CashierClass.CashierQueue);
+                CustomerView.SetCustomerView(msg);
+
+
+
             }
         }
         private void CashierWindowQueueForm_Load(object sender, EventArgs e)
